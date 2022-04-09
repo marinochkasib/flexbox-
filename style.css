@@ -1,0 +1,343 @@
+/* нормализация размеров элементов */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.flex-container{
+	border: 10px solid #7f00ff;
+	/* зададим высоту конт равную области экрана min-height: 100vh */
+	min-height: 100vh;
+}
+
+
+.flex-item{
+	padding: 10px;
+	font: 900 60px "Roboto", sans-serif;
+	color: #fff;
+	text-shadow: 4px 2px 0 rgba(0, 0, 0, 0,2);
+}
+
+.item-1{
+	background-image: linear-gradient(21deg, #dd03e4, #5611ec)
+}
+
+.item-2{
+	background-image: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%)
+}
+
+.item-3{
+	background-image: linear-gradient(to right, #f00, #ffa500, #ff0, #008000, #00f, #4b0082, #ee82ee)
+}
+
+.item-4{
+	background-image: linear-gradient(to bottom, #b721ff, #2af598, #fec051, #fee140, #fa709a)
+}
+
+.item-5{
+	background-image: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706)
+}
+
+.item-6{
+	background-image: linear-gradient(70deg, blue, pink)
+}
+
+.item-7{
+	background-image: linear-gradient(to bottom left, cyan 50%, palegoldenrod 50%)
+}
+
+.item-8{
+	background-image: radial-gradient(rgb(86, 203, 125), rgb(75, 183, 212));
+}
+
+
+
+.gorizontal-block{
+/* чтобы блоки выстроились горизонтально добавим св-во disdlay:flex: ; */
+display: flex;
+min-height: 10vh;
+}
+
+.wheit-content{
+	display: flex;
+	display: inline-flex;
+	min-height: 10vh;
+}
+
+.flex-direction-row-reverse{
+	display: flex;
+	min-height: 10vh;
+	/* значение flex-direction:row-reverse отзеркалит контент в контейнере по горизонтальной оси */
+	flex-direction: row-reverse;
+
+}
+
+.flex-direction-column{
+	display: flex;
+		/* значение flex-direction:column-reverse отзеркалит контент в контейнере по вертикальной оси CROSS AXIS */
+	flex-direction: column-reverse;
+}
+
+.flex-direction-nav{
+	display: flex;
+	flex-direction: row;
+	min-height: 10vh;
+}
+	/*чтобы мобильное меню выстраивалось по вертикали 
+	воспользуемся медиазапросом 
+	быстро отзеркалить строки меню погут св-ва
+	flex-direction: column-reverse или flex-direction: column*/
+	@media screen and (max-width: 600px) {
+		/* CSS-стили */
+		.flex-container{
+			flex-direction: column-reverse;
+		}
+		}
+
+
+
+
+
+.flex-element-for-site{
+	display: flex;
+	flex-direction: row;
+	min-height: 100vh;
+}
+/* flex: 1 уберет свободное место между
+блоками/элементами item*/
+.flex-item-element-for-site{
+	flex: 1;
+}
+
+	/*адаптируем для mobile 
+	воспользуемся медиазапросом 
+	быстро отзеркалить строки меню погут св-ва
+	flex-direction: column-reverse или flex-direction: column*/
+	@media screen and (max-width: 600px) {
+		/* CSS-стили */
+		.flex-container{
+			flex-direction: column-reverse;
+		}
+		}
+
+
+.flex-perenos-elementov{
+	display: flex;
+	flex-direction: row;
+	/* разрешаем перенос элементов свойством flex-wrap: wrap; 
+	в flex контейнере!!!
+	по умолчанию стоит flex-wrap: nowrap; поэтому элементы 
+	не переносяться имея любую ширину */
+	flex-wrap: wrap;
+	min-height: 10vh;
+}
+
+.item-flex-perenos-elementov{
+	width: 200px;
+	
+}
+
+
+/* ОТСТУПЫ*/
+.flex-pading{
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	padding: 5px;
+}
+/*При ширине 33.33% margin уберет 3 колонки и выстроит блоки в
+2 колонки. Поправим убрав 10px:
+width: calc(33.33% - 10px);
+теперь с колонками все хорошо, но отступы между элем. у нас не 5px а 10px,
+т.е. margin не схлопываются, учитывается margin каждого элем.
+если мы хотим выровнять отступы то в контейнер добавим pading:5px;
+*/
+.item-pading{
+	width: calc(33.33% - 10px);
+	margin: 5px;
+}
+
+
+
+/* ОТСТУПЫ с помощью GAP */
+.flex-gap{
+	display: flex;
+	flex-wrap: wrap;
+	height: 100vh;
+	gap: 15px;
+	padding: 15px;
+}
+.item-gap{
+	width: calc(33.33% - 10px);
+}
+/* К св-вам контейнера добавим<br> 
+		gap: 15px;<br>
+		главное не забывать пересчитывать ширину элементов<br>
+		чтобы они правильно отражались в контейнере<br> 
+			и добавить pading в контейнер чтобы сделать красивое<br>
+		*/
+
+
+/* FLEX-FLOW горизонтальное расположение*/	
+.flex-flow{
+	min-height: 10vh;
+	max-height: 20vh;
+	display: flex;
+	justify-content: space-evenly;
+	
+		
+}
+.item-flow{
+	width: 100px;
+	
+	
+}
+/* применяется для flex контейнера
+	justify-content: space-between; перевод-пространство между
+	равномерно распределит элементы по ширине контейнера
+	если только 2 item - они раположаться строго по краям
+
+	justify-content: space-around; перевод-пространство вокруг.
+	между элементами свободное пространство распределяется
+	равномерно, но будет больше чем у края контейнера 
+
+	justify-content: space-evenly; перевод: пространство-равномерно.
+	Вокруг всех элементов свободное пространство распределяется
+	равномерно
+*/
+
+
+/* FLEX-FLOW вертикальное расположение*/	
+.flex-flow-vertical{
+	display: flex;
+	flex-direction: column-reverse; /* column/column-reverse*/
+	justify-content: space-between; /* start/end/center/space-evenly/space-around/space-between */
+	
+		
+}
+.item-flow-vertical{
+	width: 200px; /* если убрать ширину, блоки растянутся по
+	всей ширине экрана, дефолтное поведение блоков- растягивание
+	по оси MAIN AXIS -> */		
+}
+
+
+/* горизонтальное выравнивание align-items: center;*/	
+.flex-flow-horizon{
+	min-height: 30vh;
+	max-height: 50vh;
+	display: flex;
+	align-items: center;
+		
+}
+.item-flow-horizon{
+	height: 100px;
+	width: 100px;	
+	
+}
+
+/* горизонтальное выравнивание align-items: baseline;*/	
+.flex-flow-baseline{
+	min-height: 30vh;
+	max-height: 50vh;
+	display: flex;
+	align-items: baseline;
+		
+}
+.item-flow-baseline{
+	height: 100px;
+	width: 100px;	
+	
+}
+
+.item-small{
+	background-image: linear-gradient(21deg, #dd03e4, #5611ec);
+	font-size: 30px;
+	
+}
+
+.item-big{
+	background-image: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+	font-size: 80px;
+}
+/* результат: выравнивание блоков именно по базовой линии
+которая проходит где-то по середине */
+
+
+
+
+/* горизонтальное выравнивание align-items: flex-start;*/	
+.flex-flow-flex-start{
+	min-height: 30vh;
+	max-height: 50vh;
+	display: flex;
+	align-items: flex-start;
+		
+}
+.item-flow-flex-start{
+	
+	width: 100px;	
+	
+}
+
+.item-small{
+	background-image: linear-gradient(21deg, #dd03e4, #5611ec);
+	font-size: 30px;
+	
+}
+
+.item-big{
+	background-image: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+	font-size: 80px;
+}
+/* результат: элементы выравниваются по началу оси */
+
+
+/* вертикальное выравнивание align-items: flex-start; + flex-direction: column;*/	
+.flex-flow-flex-start-vert{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	/*flex-start прибивает элементы к началу оси
+	align-items: flex-end; прибивает элементы к концу оси
+	align-items: stretch; растянет элементы по всей ширине
+	*/
+	flex-direction: column;
+		
+}
+.item-flow-flex-start-vert{
+	/*width: 100px;*/
+	}
+
+.item-small{
+	background-image: linear-gradient(21deg, #dd03e4, #5611ec);
+	font-size: 30px;
+	
+}
+
+.item-big{
+	background-image: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+	font-size: 80px;
+}
+
+.item-superbig{
+	background-image: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+	font-size: 180px;
+}
+/* результат: элементы выравниваются по началу оси */
+
+
+
+/*  */	
+
+/*  */
+
+
+
+/*  */	
+
+/*  */
+
+

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flexbox</title>
+	<link rel="shortcut icon" href="/img/logo50px.png">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1>Примеры Flexbox</h1>
+
+	<div class="flex-container">
+
+		<div class="flex-item item-1">1</div>
+		<div class="flex-item item-2">2</div>
+		<div class="flex-item item-3">3</div>
+		<div class="flex-item item-4">4</div>
+		<div class="flex-item item-5">5</div>
+		<div class="flex-item item-6">6</div>
+		<div class="flex-item item-7">7</div>
+		<div class="flex-item item-8">8</div>
+
+	</div>
+
+	<h2>чтобы блоки выстроились горизонтально добавим контейнеру св-во disdlay:flex:</h2>
+	<div class="flex-container gorizontal-block">
+
+		<div class="flex-item item-1">1</div>
+		<div class="flex-item item-2">2</div>
+		<div class="flex-item item-3">3</div>
+		<div class="flex-item item-4">4</div>
+		<div class="flex-item item-5">5</div>
+		<div class="flex-item item-6">6</div>
+		<div class="flex-item item-7">7</div>
+		<div class="flex-item item-8">8</div>
+
+	</div>
+
+	<h2>Ограничим размер контейнера по ширине контента, добавим контейнеру св-во display: inline-flex;</h2>
+	<div class="flex-container wheit-content">
+
+		<div class="flex-item item-1">1</div>
+		<div class="flex-item item-2">2</div>
+		<div class="flex-item item-3">3</div>
+		<div class="flex-item item-4">4</div>
+		<div class="flex-item item-5">5</div>
+		<div class="flex-item item-6">6</div>
+		<div class="flex-item item-7">7</div>
+		<div class="flex-item item-8">8</div>
+
+	</div>
+
+	<h2>FLEX-DIRECTION.<br>
+		свойство flex-direction: row-reverse;<br>
+		мы изменили не порядок самих элементов<br>
+		а изменили направление именно главной оси (MAIN AXIS)
+	</h2>
+	<div class="flex-container flex-direction-row-reverse">
+
+		<div class="flex-item item-1">1</div>
+		<div class="flex-item item-2">2</div>
+		<div class="flex-item item-3">3</div>
+		<div class="flex-item item-4">4</div>
+		<div class="flex-item item-5">5</div>
+		<div class="flex-item item-6">6</div>
+		<div class="flex-item item-7">7</div>
+		<div class="flex-item item-8">8</div>
+
+	</div>
+
+	<h2>FLEX-DIRECTION.<br>
+		свойство flex-direction: column-reverse;<br>
+		мы изменили не порядок самих элементов<br>
+		а изменили направление именно вертикальной оси (CROSS AXIS)
+	</h2>
+	<div class="flex-container flex-direction-column">
+
+		<div class="flex-item item-1">1</div>
+		<div class="flex-item item-2">2</div>
+		<div class="flex-item item-3">3</div>
+		<div class="flex-item item-4">4</div>
+		<div class="flex-item item-5">5</div>
+		<div class="flex-item item-6">6</div>
+		<div class="flex-item item-7">7</div>
+		<div class="flex-item item-8">8</div>
+
+	</div>
+
+	<h2>FLEX-DIRECTION.<br>
+		свойство flex-direction: column-reverse;<br>
+		пример навигации на сайте<br>
+		изменяем направление именно вертикальной оси (CROSS AXIS)<br>
+		чтобы мобильное меню выстраивалось по вертикали <br>
+		воспользуемся медиазапросом, быстро отзеркалить строки<br>
+		меню погут св-ва flex-direction: column-reverse или flex-direction: column
+	</h2>
+	<div class="flex-container flex-direction-nav">
+
+		<div class="flex-item item-1">HOME</div>
+		<div class="flex-item item-2">POSTS</div>
+		<div class="flex-item item-3">ABOUT US</div>
+
+	</div>
+
+	<h2>FLEX-DIRECTION.<br>
+		свойство flex-direction: column-reverse;<br>
+		Сделаем отзывчивый элемент страницы<br>
+		во всю ширину экрана с адаптацией под mobile<br>
+		<br>
+
+	</h2>
+	<div class="flex-container flex-element-for-site">
+
+		<div class="flex-item-element-for-site item-1">Aside</div>
+		<div class="flex-item-element-for-site item-2">Main</div>
+		<div class="flex-item-element-for-site item-3">Aside</div>
+
+	</div>
+
+
+	<h2>ПЕРЕНОС FLEX ЭЛЕМЕНТОВ<br>
+		разрешаем перенос элементов свойством flex-wrap: wrap;
+		в flex контейнере!!!
+		по умолчанию стоит flex-wrap: nowrap; поэтому элементы
+		не переносяться имея любую ширину <br>
+		<br>
+		теперь элементы имеют заданную ширину 200px<br>
+		и все непомещающиеся item перенесутся на следующий ряд<br>
+		<br>
+		/* flex: 1 уберет свободное место между блоками/элементами item*/<br>
+		<br>
+		.flex-item{<br>
+		flex: 1;<br>
+		}<br>
+		если это требуется
+	</h2>
+	<div class="flex-container flex-perenos-elementov">
+		<div class="flex-item item-1 item-flex-perenos-elementov">1</div>
+		<div class="flex-item item-2 item-flex-perenos-elementov">2</div>
+		<div class="flex-item item-3 item-flex-perenos-elementov">3</div>
+		<div class="flex-item item-4 item-flex-perenos-elementov">4</div>
+		<div class="flex-item item-5 item-flex-perenos-elementov">5</div>
+		<div class="flex-item item-6 item-flex-perenos-elementov">6</div>
+		<div class="flex-item item-7 item-flex-perenos-elementov">7</div>
+		<div class="flex-item item-8 item-flex-perenos-elementov">8</div>
+	</div>
+
+	<h2>ОТСТУПЫ<br>
+		/*При ширине 33.33% margin уберет 3 колонки и выстроит блоки в
+		2 колонки.<br> Поправим убрав 10px:<br>
+		width: calc(33.33% - 10px);<br>
+		теперь с колонками все хорошо, но отступы между элем. у нас не 5px а 10px,<br>
+		т.е. margin не схлопываются, учитывается margin каждого элем.<br>
+		если мы хотим выровнять отступы то в контейнер добавим<br> pading:5px;<br>
+		ВСЕ ОТСТУПЫ РОВНЫЕ
+		*/
+	</h2>
+	<div class="flex-container flex-pading">
+		<div class="flex-item item-1 item-pading">1</div>
+		<div class="flex-item item-2 item-pading">2</div>
+		<div class="flex-item item-3 item-pading">3</div>
+		<div class="flex-item item-4 item-pading">4</div>
+		<div class="flex-item item-5 item-pading">5</div>
+		<div class="flex-item item-6 item-pading">6</div>
+		<div class="flex-item item-7 item-pading">7</div>
+		<div class="flex-item item-8 item-pading">8</div>
+	</div>
+
+	<h2>ОТСТУПЫ с помощью GAP<br>
+		/* К св-вам контейнера добавим<br>
+		gap: 15px;<br>
+		главное не забывать пересчитывать ширину элементов<br>
+		чтобы они правильно отражались в контейнере<br>
+		и добавить pading в контейнер чтобы сделать красивое<br>
+		*/
+	</h2>
+	<div class="flex-container flex-gap">
+		<div class="flex-item item-1 item-gap">1</div>
+		<div class="flex-item item-2 item-gap">2</div>
+		<div class="flex-item item-3 item-gap">3</div>
+		<div class="flex-item item-4 item-gap">4</div>
+		<div class="flex-item item-5 item-gap">5</div>
+		<div class="flex-item item-6 item-gap">6</div>
+		<div class="flex-item item-7 item-gap">7</div>
+		<div class="flex-item item-8 item-gap">8</div>
+	</div>
+
+	<h2>FLEX-FLOW выравниваем элементы<br>
+		применяется для flex контейнера<br>
+
+	</h2>
+	
+	<img width="400" height="200" src="img/flex-flow.png" alt="">
+	<h2>FLEX-FLOW горизонтальное расположение</h2>
+	<p>применяется для flex контейнера<br>
+		<br>
+		justify-content: space-between; перевод-пространство между<br>
+		равномерно распределит элементы по ширине контейнера<br>
+		если только 2 item - они раположаться строго по краям<br>
+		<br>
+		justify-content: space-around; перевод-пространство вокруг.<br>
+		между элементами свободное пространство распределяется<br>
+		равномерно, но будет больше чем у края контейнера <br>
+		<br>
+		justify-content: space-evenly; перевод: пространство-равномерно.<br>
+		Вокруг всех элементов свободное пространство распределяется<br>
+		равномерно</p>
+	<div class="flex-container flex-flow">
+		<div class="flex-item item-1 item-flow">1</div>
+		<div class="flex-item item-2 item-flow">2</div>
+		<div class="flex-item item-3 item-flow">3</div>
+		<div class="flex-item item-4 item-flow">4</div>
+	</div>
+	<h2>FLEX-FLOW вертикальное расположение</h2>
+	<div class="flex-container flex-flow-vertical">
+		<div class="flex-item item-1 item-flow-vertical">1</div>
+		<div class="flex-item item-2 item-flow-vertical">2</div>
+		<div class="flex-item item-3 item-flow-vertical">3</div>
+		<div class="flex-item item-4 item-flow-vertical">4</div>
+	</div>
+	<h2>Горизонтальное выравнивание align-items: center;</h2>
+	<div class="flex-container flex-flow-horizon">
+		<div class="flex-item item-1 item-flow-horizon">1</div>
+		<div class="flex-item item-2 item-flow-horizon">2</div>
+		<div class="flex-item item-3 item-flow-horizon">3</div>
+		<div class="flex-item item-4 item-flow-horizon">4</div>
+	</div>
+	<h2>Горизонтальное выравнивание align-items: baseline;</h2>
+	<div class="flex-container flex-flow-baseline">
+		<div class="flex-item item-small item-flow-baseline">1</div>
+		<div class="flex-item item-big item-flow-baseline">2</div>
+		<div class="flex-item item-small item-flow-baseline">3</div>
+		<div class="flex-item item-big item-flow-baseline">4</div>
+	</div>
+	<h2>Горизонтальное выравнивание align-items: flex-start;</h2>
+	<div class="flex-container flex-flow-flex-start">
+		<div class="flex-item item-small item-flow-flex-start">1</div>
+		<div class="flex-item item-big item-flow-flex-start">2</div>
+		<div class="flex-item item-small item-flow-flex-start">3</div>
+		<div class="flex-item item-big item-flow-flex-start">4</div>
+	</div>
+	<h2>Вертикальное выравнивание<br>
+		 align-items: flex-start; + flex-direction: column;<br>
+		 <br>
+		 flex-start прибивает элементы к началу оси<br>
+		 align-items: flex-end; прибивает элементы к концу оси<br>
+		 align-items: stretch; растянет элементы по всей ширине<br>
+		</h2>
+	<div class="flex-container flex-flow-flex-start-vert">
+		<div class="flex-item item-small item-flow-flex-start-vert">1</div>
+		<div class="flex-item item-big item-flow-flex-start-vert">2</div>
+		<div class="flex-item item-small item-flow-flex-start-vert">3</div>
+		<div class="flex-item item-superbig item-flow-flex-start-vert">4</div>
+	</div>
+
+
+
+	<h2> ALINE-CONTENT --- Продолжай смотреть 29:14 <br>
+		Многострочное выравнивание<br>
+
+	</h2>
+	<div class="flex-container flex- ">
+		<div class="flex-item item-1 item- ">1</div>
+		<div class="flex-item item-2 item- ">2</div>
+		<div class="flex-item item-3 item- ">3</div>
+		<div class="flex-item item-4 item- ">4</div>
+		<div class="flex-item item-5 item- ">5</div>
+		<div class="flex-item item-6 item- ">6</div>
+		<div class="flex-item item-7 item- ">7</div>
+		<div class="flex-item item-8 item- ">8</div>
+	</div>
+
+
+</body>
+
+</html>
